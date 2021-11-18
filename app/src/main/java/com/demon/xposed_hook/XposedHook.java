@@ -1,5 +1,6 @@
 package com.demon.xposed_hook;
 
+import android.app.ActivityManager;
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
@@ -260,6 +261,25 @@ public class XposedHook implements IXposedHookLoadPackage {
                     @Override
                     protected void beforeHookedMethod(MethodHookParam param) {
                         XposedBridge.log("调用getSerial获取设备设备序列号");
+                    }
+
+                    @Override
+                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                        XposedBridge.log(getMethodStack());
+                        super.afterHookedMethod(param);
+                    }
+                }
+        );
+
+
+        XposedHelpers.findAndHookMethod(
+                ActivityManager.class.getName(),
+                lpparam.classLoader,
+                "getRunningAppProcesses",
+                new XC_MethodHook() {
+                    @Override
+                    protected void beforeHookedMethod(MethodHookParam param) {
+                        XposedBridge.log("读取当前运行应用进程");
                     }
 
                     @Override
