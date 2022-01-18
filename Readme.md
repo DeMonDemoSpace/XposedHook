@@ -1,6 +1,6 @@
 ## Xposed-Hook
 
-Android获取敏感信息整改---基于Xposed的方法检测。
+基于Xposed的Android获取敏感信息方法检测。
 
 #### 1.安装Xposed虚拟机
 
