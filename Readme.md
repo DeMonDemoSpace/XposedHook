@@ -6,7 +6,8 @@ Android获取敏感信息整改---基于Xposed的方法检测。
 
 下载页面：[VirtualXposed](https://github.com/android-hacker/VirtualXposed/releases)
 
-需要注意的是：VirtualXposed再0.18.2版本之后只支持64位的App。
+需要注意的是：VirtualXposed在```0.18.2```版本之后只支持64位的App。
+
 如果你的App目前还是32位的，只能使用[32位 VirtualXposed_0.18.2.apk](https://github.com/android-hacker/VirtualXposed/releases/download/0.18.2/VirtualXposed_0.18.2.apk)
 
 下载后安装到手机待用。
@@ -178,4 +179,5 @@ com.demon.xposed_hook.XposedHook
 ```
 
 将这些第三方库都放到同意隐私权限后再初始化，再次按照上面的方法使用Xposed检测。
+
 直到日志中App启动后已经没有任何地方调用获取敏感信息的方法即可。
